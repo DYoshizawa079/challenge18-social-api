@@ -1,0 +1,43 @@
+Start server and the Mongoose models are synced to the MongoDB database
+
+GET routes in Insomnia for ALL users
+Return data as a JSON 
+For each user...
+- Return w. array of id of his thoughts
+- Return w. array of id of his friends
+
+GET routes in Insomnia for ALL thoughts
+Return data as a JSON
+For each thought...
+- Return w. array of reactions
+- Return number of reactions it got
+
+GET routes in Insomnia for A SINGLE user
+Return data as a JSON 
+- Return w. array of his thoughts with all data on each thoguht
+- Return w. array of his friends with all data on his friends
+
+GET routes in Insomnia for A SINGLE thought
+Return data as a JSON
+- Return w. array of reactions
+- Return number of reactions it got
+
+POST route to create users 
+
+POST route to create thoughts
+
+PUT route to update users
+
+POST route to update thoughts
+
+DELETE route to delete users 
+
+DELETE route to delete thoughts
+
+POST route to create reactions to thoughts 
+
+POST route to add friends to a user's friend list
+
+DELETE route to delete reactions to thoughts
+
+DELETE route to remove friends from a user's friend list
