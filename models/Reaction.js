@@ -1,10 +1,11 @@
 // Import Mongoose's Schema constructor and model function
+const { default: mongoose } = require('mongoose');
 const { Schema, model } = require('mongoose');
 
 const ReactionSchema = new Schema(
     {
         reactionId: {
-            type: Schema.Types.ObjectId,
+            type: mongoose.ObjectId
             // Set default value to new ObjectId
         },
         reactionBody: {
@@ -36,4 +37,4 @@ const Reaction = model('Reaction', ReactionSchema);
 //This will not be a model, but rather will be used as the reaction field's subdocument schema in the Thought model.
 
 // Export the Users model
-module.exports = Thought;
+module.exports = Reaction;

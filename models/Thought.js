@@ -23,7 +23,7 @@ const ThoughtSchema = new Schema(
         reactions: [
             {
                 type: Schema.Types.ObjectId,
-                ref: 'Reactions' 
+                ref: 'Reaction' 
             }
         ]
     },
@@ -36,12 +36,12 @@ const ThoughtSchema = new Schema(
 );
 
 // Create the Users model using the UsersSchema
-const Thought = model('Users', ThoughtSchema);
+const Thought = model('Thought', ThoughtSchema);
 
 // Get total count of reactions on retrieval
-UsersSchema.virtual('reactionCount').get(function(){
+/* ThoughtSchema.virtual('reactionCount').get(function(){
     return this.reaction.length;
-});
+}); */
 
 // Export the Users model
 module.exports = Thought;
