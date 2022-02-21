@@ -14,11 +14,20 @@ router
     .get(getAllUsers)
     .post(createUsers);
 
-// Set up GET one, PUT and DELETE at /api/Userss/:id
+// Set up GET one, PUT and DELETE at /api/Users/:id
 router
     .route('/:id')
     .get(getUsersById)
     .put(updateUsers)
     .delete(deleteUsers);
+
+const { 
+    addFriends,
+    removeFriends
+} = require('../../controllers/friends-controllers');
+
+// /api/comments/<pizzaId>
+router.route('/:userId/friends/:friendId').post(addFriends);
+router.route('/:userId/friends/:friendId').delete(removeFriends);
 
 module.exports = router;
