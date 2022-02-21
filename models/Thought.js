@@ -6,7 +6,6 @@ const ThoughtSchema = new Schema(
         thoughtText: {
             type: String,
             required: 'Please enter a thought',
-            //validate: [({ length }) => length >= 6, 'Password should be longer.']
             minlength: 1,
             maxlength: 280
         },
@@ -37,11 +36,6 @@ const ThoughtSchema = new Schema(
 
 // Create the Users model using the UsersSchema
 const Thought = model('Thought', ThoughtSchema);
-
-// Get total count of reactions on retrieval
-/* ThoughtSchema.virtual('reactionCount').get(function(){
-    return this.reaction.length;
-}); */
 
 // Export the Users model
 module.exports = Thought;

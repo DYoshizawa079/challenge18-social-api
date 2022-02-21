@@ -1,46 +1,9 @@
-//const res = require('express/lib/response');
 const { Reaction, Thought } = require('../models');
 
 const reactionController = {
 
-    // Get all Reaction
-    /* getAllReaction(req, res) {
-        Reaction.find({})
-            .then(dbReactionData => res.json(dbReactionData))
-            .catch(err => {
-                console.log(err);
-                res.status(400).json(err);
-            });
-    }, */
-
-    // Get one user by ID
-    /* getReactionById({ params }, res) {
-        Reaction.findOne({ _id: params.id })
-            .then(dbReactionData => {
-                // If no Reaction is found, send 404
-                if (!dbReactionData) {
-                    res.status(404).json({ message: 'No Reaction with this ID'});
-                    return;
-                }
-                res.json(dbReactionData);
-            })
-            .catch(err => {
-                console.log(err);
-                res.status(400).json(err);
-            });
-    }, */
-
-    // Create Reaction
-    // Note how the body obj is destructured out of the request object.
-    // We can do that b/c we don't need anything else from the req object.
-    /* createReaction({ body }, res) {
-        Reaction.create(body)
-            .then(dbReactionData => res.json(dbReactionData))
-            .catch(err => res.status(400).json(err));
-    }, */
-
+    // Add a reaction to an existing post
     createReaction( { params, body }, res) {
-        //console.log("PARAMS", params);
         Reaction.create(body)
             .then(({ _id }) => {
                 return Thought.findOneAndUpdate(
@@ -59,7 +22,7 @@ const reactionController = {
             .catch(err => res.json(err));
     },
     
-    // Delete Reaction
+    // Delete a reaction that's attached to an existing post
     deleteReaction({ params }, res) {
         Reaction.findOneAndDelete({ _id: params.reactionId })
             .then(deletedReaction => {

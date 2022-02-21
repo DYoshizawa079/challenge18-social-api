@@ -26,7 +26,7 @@ const {
     removeFriends
 } = require('../../controllers/friends-controllers');
 
-// /api/comments/<pizzaId>
+// Set up POST and DELETE route for /api/Users/:userId/friends/:friendId
 router.route('/:userId/friends/:friendId').post(addFriends);
 router.route('/:userId/friends/:friendId').delete(removeFriends);
 

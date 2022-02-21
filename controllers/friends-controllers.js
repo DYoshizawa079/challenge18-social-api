@@ -2,6 +2,7 @@ const { Users } = require('../models');
 
 const friendsController = {
 
+    // Add a friend to a user
     addFriends( { params }, res) {
         Users.findOneAndUpdate(
             { _id: params.userId },
@@ -18,7 +19,7 @@ const friendsController = {
         .catch(err => res.json(err));
     },
     
-    // Delete Friends
+    // Remove a friend from a user
     removeFriends( { params }, res) {
         Users.findOneAndUpdate(
             { _id: params.userId },

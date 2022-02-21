@@ -3,7 +3,7 @@ const { Thought } = require('../models');
 
 const thoughtController = {
 
-    // Get all Thought
+    // Get all Thoughts
     getAllThought(req, res) {
         Thought.find({})
             .populate({
@@ -18,7 +18,7 @@ const thoughtController = {
             });
     },
 
-    // Get one user by ID
+    // Get one thought by its ID
     getThoughtById({ params }, res) {
         Thought.findOne({ _id: params.id })
             .then(dbThoughtData => {
@@ -35,7 +35,7 @@ const thoughtController = {
             });
     },
 
-    // Create Thought
+    // Create a thought
     // Note how the body obj is destructured out of the request object.
     // We can do that b/c we don't need anything else from the req object.
     createThought({ body }, res) {
@@ -44,7 +44,7 @@ const thoughtController = {
             .catch(err => res.status(400).json(err));
     },
 
-    // Update thought by ID
+    // Update a thought by its ID
     updateThought({ params, body }, res) {
         // If { new: true } isnt set in the third param, it wont return the updated json
         Thought.findOneAndUpdate({ _id: params.id }, body, { new: true })

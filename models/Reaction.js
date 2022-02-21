@@ -34,7 +34,5 @@ const ReactionSchema = new Schema(
 // Create the Users model using the UsersSchema
 const Reaction = model('Reaction', ReactionSchema);
 
-//This will not be a model, but rather will be used as the reaction field's subdocument schema in the Thought model.
-
 // Export the Users model
 module.exports = Reaction;

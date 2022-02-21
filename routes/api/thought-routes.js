@@ -23,10 +23,10 @@ router
 
 const { createReaction, deleteReaction } = require('../../controllers/reaction-controllers');
 
-// /api/comments/<pizzaId>
+// Set up POST route for /api/thought/:thoughtId/reactions
 router.route('/:thoughtId/reactions').post(createReaction);
 
-// /api/comments/<pizzaId>/<commentId>
+// Set up DELETE route for /api/thought/:thoughtId/reactions/:reactionId
 router.route('/:thoughtId/reactions/:reactionId').delete(deleteReaction);
 
 module.exports = router;
