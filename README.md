@@ -40,7 +40,7 @@ Insomnia is recommended for testing the API endpoints.
 
 A screenshot of one of the app's API route being tested in Insomnia is shown below:
 
-![The app in use](https://drive.google.com/file/d/1qglA8cSdz6iFOC8eDBm7KvnhOhGqjN3X/view?usp=sharing)
+![The app in use](https://github.com/DYoshizawa079/challenge18-social-api/blob/main/screenshot.png?raw=true)
 
 ## Contributor
 
